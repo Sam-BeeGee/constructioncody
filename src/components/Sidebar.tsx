@@ -27,7 +27,7 @@ const FEATURES = [
 
 export default function Sidebar({ onUpgrade }: SidebarProps) {
   return (
-    <div className="hidden w-96 flex-col overflow-y-auto bg-gray-50 lg:flex">
+    <div className="hidden w-80 flex-col overflow-y-auto border-l border-gray-200 bg-gray-50 xl:flex">
       {/* Features Section */}
       <div className="border-b border-gray-200 p-6">
         <h3 className="mb-5 text-xs font-bold uppercase tracking-wide text-gray-500">

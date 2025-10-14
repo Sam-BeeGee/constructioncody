@@ -34,7 +34,7 @@ export default function ChatInput({ onSend, onUseSuggestion, disabled }: ChatInp
 
   return (
     <div className="border-t border-gray-200 bg-white px-8 py-6">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-4xl">
         <div className="flex gap-3">
           <textarea
             value={input}

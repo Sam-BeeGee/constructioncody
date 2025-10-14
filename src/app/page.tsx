@@ -141,49 +141,53 @@ export default function ChatPage() {
       {/* Main Container */}
       <div className="flex h-[calc(100vh-77px)]">
         {/* Chat Section */}
-        <div className="flex flex-1 flex-col border-r border-gray-200">
+        <div className="flex flex-1 flex-col">
           {/* Chat Header */}
-          <div className="border-b border-gray-200 bg-white px-8 py-10">
-            <h1 className="mb-3 text-3xl font-bold text-gray-900">
-              Ask me anything about construction
-            </h1>
-            <p className="text-gray-600">
-              Get instant answers about specifications, drawings, RFIs, submittals, and construction best practices
-            </p>
+          <div className="border-b border-gray-200 bg-white">
+            <div className="mx-auto max-w-4xl px-8 py-10">
+              <h1 className="mb-3 text-3xl font-bold text-gray-900">
+                Ask me anything about construction
+              </h1>
+              <p className="text-gray-600">
+                Get instant answers about specifications, drawings, RFIs, submittals, and construction best practices
+              </p>
+            </div>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto bg-gray-50 px-8 py-8">
-            {messages.length === 0 ? (
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center">
-                  <div className="mx-auto mb-8 h-32 w-32 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 opacity-10"></div>
-                  <h2 className="mb-3 text-2xl font-bold text-gray-900">Start a conversation</h2>
-                  <p className="mx-auto max-w-md text-gray-600">
-                    Ask me anything about construction, electrical systems, specifications, or project management. I'm here to help.
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <div className="mx-auto max-w-3xl space-y-6">
-                {messages.map((message) => (
-                  <ChatMessage key={message.id} message={message} />
-                ))}
-                {isLoading && (
-                  <div className="flex gap-4">
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 text-sm font-semibold text-white">
-                      CC
-                    </div>
-                    <div className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-5 py-4">
-                      <div className="h-2 w-2 animate-bounce rounded-full bg-gray-400"></div>
-                      <div className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: '0.2s' }}></div>
-                      <div className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: '0.4s' }}></div>
-                    </div>
+          <div className="flex-1 overflow-y-auto bg-gray-50">
+            <div className="mx-auto max-w-4xl px-8 py-8">
+              {messages.length === 0 ? (
+                <div className="flex h-full items-center justify-center py-20">
+                  <div className="text-center">
+                    <div className="mx-auto mb-8 h-32 w-32 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 opacity-10"></div>
+                    <h2 className="mb-3 text-2xl font-bold text-gray-900">Start a conversation</h2>
+                    <p className="mx-auto max-w-md text-gray-600">
+                      Ask me anything about construction, electrical systems, specifications, or project management. I'm here to help.
+                    </p>
                   </div>
-                )}
-                <div ref={messagesEndRef} />
-              </div>
-            )}
+                </div>
+              ) : (
+                <div className="space-y-6">
+                  {messages.map((message) => (
+                    <ChatMessage key={message.id} message={message} />
+                  ))}
+                  {isLoading && (
+                    <div className="flex gap-4">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 text-sm font-semibold text-white">
+                        CC
+                      </div>
+                      <div className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-5 py-4">
+                        <div className="h-2 w-2 animate-bounce rounded-full bg-gray-400"></div>
+                        <div className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: '0.4s' }}></div>
+                      </div>
+                    </div>
+                  )}
+                  <div ref={messagesEndRef} />
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Input Area */}
