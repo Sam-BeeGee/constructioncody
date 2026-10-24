@@ -3,13 +3,5 @@
   "outputDirectory": ".next",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "env": {
-    "GOOGLE_API_KEY": "AIzaSyCdeRWYrg3LM_d2pb2v6yR9E3NCUUqPZ7w"
-  },
-  "build": {
-    "env": {
-      "GOOGLE_API_KEY": "AIzaSyCdeRWYrg3LM_d2pb2v6yR9E3NCUUqPZ7w"
-    }
-  }
+  "framework": "nextjs"
 }
